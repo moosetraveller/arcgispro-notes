@@ -1,6 +1,6 @@
 [Back](README.md)
 
-# Personal cheat sheet ESRI fonts
+# Cheat sheet ESRI fonts
 ## Pit
 - ESRI Cartography, Regular, Latin-1 Supplement, 204
 
