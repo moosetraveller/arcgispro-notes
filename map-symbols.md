@@ -3,6 +3,10 @@
 # Cheat sheet ESRI fonts
 ## Pit
 - ESRI Cartography, Regular, Latin-1 Supplement, 204
+- ESRI Environmental & Icons, Regular, Basic Latin, 49
+
+## Shipwreck
+- ESRI Environmental & Icons, Regular, Latin-1 Supplement, 235
 
 ## Anchor
 - ESRI Cartography, Regular, Latin-1 Supplement, 206
@@ -12,6 +16,7 @@
 
 ## Monument
 - ESRI Business, Regular, Basic Latin, 54
+- ESRI Environmental & Icons, Regular, Latin-1 Supplement, 228
 
 ## Educational Building
 - ESRI Cartography, Regular, Latin-1 Supplement, 217 (non-filled) or 229 (filled)
