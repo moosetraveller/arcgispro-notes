@@ -7,5 +7,8 @@
 
 
 ## Python
+### ArcPy
+- http://www.nickeubank.com/wp-content/uploads/2015/10/ArcPy_IntroductoryTutorial.pdf
+
 ### Logging
 - https://www.loggly.com/blog/exceptional-logging-of-exceptions-in-python
