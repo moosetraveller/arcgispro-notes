@@ -10,6 +10,9 @@
 ### Tutorials
 - https://docs.python-guide.org/
 
+### Refactoring
+- https://realpython.com/python-refactoring/
+
 ### ArcPy
 - http://www.nickeubank.com/wp-content/uploads/2015/10/ArcPy_IntroductoryTutorial.pdf
 
