@@ -7,6 +7,9 @@
 
 
 ## Python
+### Tutorials
+- https://docs.python-guide.org/
+
 ### ArcPy
 - http://www.nickeubank.com/wp-content/uploads/2015/10/ArcPy_IntroductoryTutorial.pdf
 
