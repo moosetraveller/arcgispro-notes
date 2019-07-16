@@ -1,7 +1,7 @@
 import os
 from abc import ABC
 
-class FileBatchAutomator:
+class FileBatchExecuter:
     def __init__(self, directories, recursive=True):
         self.directories = directories
         self.recursive = recursive
@@ -46,7 +46,7 @@ class DirNamePrinter(FileOperation):
     def handleDirectory(self, path, file, fullPath):
         print (fullPath)
 
-automator = FileBatchAutomator(["C:\\OSGeo4W64", "C:\\Windows"])
-# automator.run(FileNamePrinter())
-# automator.run(TextFileFinder())
-automator.run(DirNamePrinter())
+executer = FileBatchExecuter(["C:\\OSGeo4W64", "C:\\Windows"])
+# executer.run(FileNamePrinter())
+# executer.run(TextFileFinder())
+executer.run(DirNamePrinter())
