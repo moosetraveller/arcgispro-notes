@@ -18,3 +18,9 @@
 
 ### Logging
 - https://www.loggly.com/blog/exceptional-logging-of-exceptions-in-python
+
+## ArcGIS Pro SDK
+- https://github.com/Esri/arcgis-pro-sdk
+
+## ArcGIS for Desktop Python AddIn
+- https://desktop.arcgis.com/en/arcmap/latest/analyze/python-addins/creating-an-add-in-button.htm
