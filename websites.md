@@ -22,6 +22,7 @@
 ## ArcGIS Pro SDK
 - https://github.com/Esri/arcgis-pro-sdk
 - https://pro.arcgis.com/en/pro-app/sdk/
+- https://pro.arcgis.com/en/pro-app/sdk/api-reference
 
 ## ArcGIS for Desktop Python AddIn
 - https://desktop.arcgis.com/en/arcmap/latest/analyze/python-addins/creating-an-add-in-button.htm
