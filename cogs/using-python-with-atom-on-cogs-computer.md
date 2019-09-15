@@ -30,9 +30,8 @@ set PATH=%PATH%;"C:\Python27"
 16. If you write your code, there should be auto-completion available :-)
 17. Run your Python script with `Ctrl+Shift+B` (must be saved beforehand and cursor must be inside the script tab)
 
-## Other recommended Settings
+## Other Settings which might be useful
 - If Menu bar is not always show, press `ALT+V` and then choose `Toggle Menu Bar`
-- Also, I recommend to use `Toggle Soft Wrap`
 
 ## Alternatives for your home computer
 Use PyCharm (free student version) or Visual Studio Code (free as well). Personally, I like both editors.
