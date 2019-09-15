@@ -38,7 +38,7 @@ atom
 5. Clear input field and paste following path: `C:\Program Files\atom\app-1.38.2\atom.exe`
 6. Press `OK` twice and close the `Properties` dialog
 
-Note: if you want to pin the icon to the taskbar might be a bit tricky, you have to pin the cmd-window and not Atom.io when the application is started, otherwise the user-defined path won't be set
+Note: if you want to pin the icon to the taskbar might be a bit tricky, you have to pin the cmd-window of the batch file and not Atom.io when the application is started, otherwise the user-defined path won't be set. However, it seems that this is not possible (I might be wrong tho ;))
 
 ## Other Settings which might be useful
 - If Menu bar is not always show, press `ALT+V` and then choose `Toggle Menu Bar`
