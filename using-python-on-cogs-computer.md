@@ -13,7 +13,7 @@ set PATH=%PATH%;"C:\Python27"
 "C:\Program Files\atom\app-1.38.2\atom.exe"
 ```
 4. Save file as `Use Atom with Python 2x.bat` on your desktop
-5. Double click the Batch file based on the Python version you need
+5. Double click the Batch file based on the Python version you want to start
 6. Go to `File`/`Settings` in the Menu bar (if not displayed, you can display it by pressing the `ALT` key)
 7. On the `Settings tab` change to `Install` (vertical tab) and search for `Script` (the authors name is rgbkrk, description is "Run code in Atom!" and it should have more than 2 million downloads)
 8. Click `Install` button
