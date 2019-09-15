@@ -1,10 +1,10 @@
-# Using Python on COGS Computer other than IDLE
+# Using Python on COGS Computer
 ## Issues
-1. We are not allowed to set a User-defined PATH variable. 
-2. No useful editor install
-3. We won't be able to install third-party libraries (e.g. no linter to validate code such as flake8)
+1. No useful editor installed
+2. We won't be able to install third-party libraries (e.g. no linter to validate code such as flake8)
 
 ## Atom.io (not the best choice but the only useful editor installed)
+We are not allowed to set a user-defined PATH variable. Therefore, following steps describes a workaround for this issue.
 1. Open any editor, copy&paste following two lines:
 ```
 set PATH=%PATH%;"C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3"
