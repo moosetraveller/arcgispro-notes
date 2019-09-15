@@ -18,7 +18,7 @@ atom
 
 ### Required Plugins
 1. Go to `File`/`Settings` in the Menu bar (if not displayed, you can display it by pressing the `ALT` key)
-2. On the `Settings tab` change to `Install` (vertical tab) and search for `Script` (the authors name is rgbkrk, description is "Run code in Atom!" and it should have more than 2 million downloads)
+2. On the `Settings tab` change to `Install` (vertical tab) and search for `Script`
 3. Click `Install` button
 4. Search for `autocomplete-python` and click `Install` as well
 5. On the `Settings tab` change to `Packages` (vertical tab), clear filter if necessary, you should see both installed packages
