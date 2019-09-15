@@ -1,5 +1,5 @@
 # Using Python on COGS Computer
-## Atom.io (not the best choice but the only useful editor installed)
+## Atom.io
 We are not allowed to set a user-defined PATH variable. Therefore, following steps describes a workaround for this issue.
 1. Open any editor, copy&paste following two lines:
 ```
