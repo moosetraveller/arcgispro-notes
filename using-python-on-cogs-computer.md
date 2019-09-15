@@ -1,5 +1,5 @@
 # Using Python on COGS Computer other than IDLE
-## Issue
+## Issues
 1. We are not allowed to set a User-defined PATH variable. 
 2. No useful editor install
 3. We won't be able to install third-party libraries (e.g. no linter to validate code such as flake8)
