@@ -8,6 +8,8 @@ target_geodatabase_name = r"vancouver.gdb"
 target_geodatabase_location = r"F:\CART3032\data\canvec\vancouver"
 target_geodatabase = os.path.join(target_geodatabase_location, target_geodatabase_name)
 
+target_feature_dataset = "canvec"
+
 coordinate_system = arcpy.SpatialReference("NAD 1983 UTM Zone 10N")
 
 def init_logging():
@@ -21,16 +23,21 @@ def create_geodatabase():
     arcpy.CreateFileGDB_management(target_geodatabase_location, target_geodatabase_name)
     logging.info("Geodatabase {} created.".format(target_geodatabase))
 
+def create_feature_dataset():
+    arcpy.CreateFeatureDataset_management(target_geodatabase, target_feature_dataset, coordinate_system)
+
 def get_updated_name(feature_class):
     return str(feature_class).replace("_0", "_pt").replace("_1", "_ln").replace("_2", "_py")
 
 def import_data():
 
+    create_feature_dataset()
+    
     for feature_class in arcpy.ListFeatureClasses():
 
         row_count = arcpy.GetCount_management(feature_class)
         updated_name = get_updated_name(feature_class)
-        target_feature_class = os.path.join(target_geodatabase, updated_name)
+        target_feature_class = os.path.join(target_geodatabase, target_feature_dataset, updated_name)
 
         if (int(row_count[0]) > 0):
             logging.info("Processing feature class {} ({})...".format(feature_class, row_count))
