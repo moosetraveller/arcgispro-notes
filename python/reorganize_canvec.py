@@ -4,8 +4,8 @@ import logging
 
 source_geodatabase = r"F:\CART3032\data\canvec\vancouver\canvec_190916_116785.gdb"
 
-target_geodatabase_name = r"vancouver.gdb"
-target_geodatabase_location = r"F:\CART3032\data\canvec\vancouver"
+target_geodatabase_name = r"Vancouver.gdb"
+target_geodatabase_location = r"F:\CART3032\projects\Vancouver"
 target_geodatabase = os.path.join(target_geodatabase_location, target_geodatabase_name)
 
 target_feature_dataset = "canvec"
