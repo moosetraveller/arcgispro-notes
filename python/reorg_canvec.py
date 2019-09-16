@@ -21,16 +21,15 @@ def create_geodatabase():
     arcpy.CreateFileGDB_management(target_geodatabase_location, target_geodatabase_name)
     logging.info("Geodatabase {} created.".format(target_geodatabase))
 
-def get_name(feature_class):
-    name = str(feature_class)
-    return name.replace("_0", "_pt").replace("_1", "_ln").replace("_2", "_py")
+def get_updated_name(feature_class):
+    return str(feature_class).replace("_0", "_pt").replace("_1", "_ln").replace("_2", "_py")
 
 def import_data():
 
     for feature_class in arcpy.ListFeatureClasses():
 
         row_count = arcpy.GetCount_management(feature_class)
-        updated_name = get_name(feature_class)
+        updated_name = get_updated_name(feature_class)
         target_feature_class = os.path.join(target_geodatabase, updated_name)
 
         if (int(row_count[0]) > 0):
