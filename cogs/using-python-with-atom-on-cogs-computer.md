@@ -49,7 +49,7 @@ What is REPL? https://pythonprogramminglanguage.com/repl
 5. Replace content of input field with `C:\Windows\System32\cmd.exe` (unless you know what Powershell is and want to use it)
 6. Close the `Settings tab`
 7. Open Terminal with `Alt+Shift+T` in Atom.io
-8. A new pane opens, press `Enter`
+8. A new pane opens, press `Enter` if you don't see an input cursor
 9. Type in `python` followed by another `Enter`
 10. Voilà, your REPL is ready
 
