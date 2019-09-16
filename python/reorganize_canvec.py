@@ -32,7 +32,7 @@ def get_updated_name(feature_class):
 def import_data():
 
     create_feature_dataset()
-    
+
     for feature_class in arcpy.ListFeatureClasses():
 
         row_count = arcpy.GetCount_management(feature_class)
@@ -43,7 +43,7 @@ def import_data():
             logging.info("Processing feature class {} ({})...".format(feature_class, row_count))
             arcpy.Project_management(feature_class, target_feature_class, coordinate_system)
         else:
-            logging.info("Empty feature class {} skipped.".format(feature_class))
+            logging.info("Empty feature class {} ignored.".format(feature_class))
 
 def main():
 
