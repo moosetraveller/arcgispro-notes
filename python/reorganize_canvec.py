@@ -29,7 +29,10 @@ def create_feature_dataset():
 def get_updated_name(feature_class):
     return str(feature_class).replace("_0", "_pt").replace("_1", "_ln").replace("_2", "_py")
 
-def import_data():
+def get_alias(feature_class_name):
+    return feature_class_name.replace("_", " ").title()
+
+def reorganize_data():
 
     create_feature_dataset()
 
@@ -42,6 +45,7 @@ def import_data():
         if (int(row_count[0]) > 0):
             logging.info("Processing feature class {} ({})...".format(feature_class, row_count))
             arcpy.Project_management(feature_class, target_feature_class, coordinate_system)
+            arcpy.AlterAliasName(target_feature_class, get_alias(updated_name))
         else:
             logging.info("Empty feature class {} ignored.".format(feature_class))
 
@@ -52,7 +56,7 @@ def main():
     try:
         set_environment()
         create_geodatabase()
-        import_data()
+        reorganize_data()
 
     except arcpy.ExecuteError:
         logging.error(arcpy.GetMessage(2))
