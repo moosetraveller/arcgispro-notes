@@ -1,5 +1,7 @@
 # Using Python with Atom.io on a COGS Computer
 ## Atom.io
+Please note: I personally prefer other editors. However, since we are limited to Notepad++, Atom.io or IDLE, Atom.io is probably the best option.
+
 ### Python Versions
 We are not allowed to set a user-defined PATH variable. Therefore, following steps describes a workaround for this issue.
 1. Open any editor, copy&paste following two lines:
