@@ -34,10 +34,10 @@ def import_data():
         target_feature_class = os.path.join(target_geodatabase, updated_name)
 
         if (int(row_count[0]) > 0):
-            logging.info("Processing feature {} ({})...".format(feature_class, row_count))
+            logging.info("Processing feature class {} ({})...".format(feature_class, row_count))
             arcpy.Project_management(feature_class, target_feature_class, coordinate_system)
         else:
-            logging.info("Empty feature {} skipped.".format(feature_class))
+            logging.info("Empty feature class {} skipped.".format(feature_class))
 
 def main():
 
