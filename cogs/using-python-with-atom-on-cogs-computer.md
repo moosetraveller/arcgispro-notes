@@ -21,18 +21,9 @@
 11. If you write your code, there should be auto-completion available :-)
 12. Run your Python script with `Ctrl+Shift+B` (must be saved beforehand and cursor must be inside the script tab)
 
-### Change Icons for Batch Files
-1. Move batch files to another locations such as your D drive
-2. Create Shortcuts on Desktop pointing to those batch files
-3. Open `Properties` for each of those Shortcuts
-4. Click `Change Icon...`
-5. Clear input field and paste following path: `C:\Program Files\atom\app-1.38.2\atom.exe`
-6. Press `OK` twice and close the `Properties` dialog
-
-Note: if you want to pin the icon to the taskbar might be a bit tricky, you have to pin the cmd-window of the batch file and not Atom.io when the application is started, otherwise the user-defined path won't be set. However, it seems that this is not possible (I might be wrong tho ;))
-
 ### Using a language shell (REPL)
 What is REPL? https://pythonprogramminglanguage.com/repl
+
 1. Go to `File`/`Settings` in the Menu bar (if not displayed, you can display it by pressing the `ALT` key)
 2. On the `Settings tab` change to `Install` (vertical tab) and search for `platformio-ide-terminal`
 3. Click `Install` button, wait until package is installed
