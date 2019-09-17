@@ -1,21 +1,12 @@
 # Using Python with Atom.io on a COGS Computer
-## Atom.io
-### Python Versions
-We are not allowed to set a user-defined PATH variable. Therefore, following steps describes a workaround for this issue.
-1. Open any editor, copy&paste following two lines:
-```
-set PATH=%PATH%;"C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3"
-atom
-```
-2. Save file as `Use Atom with Python 3x.bat` on your desktop
-3. Create another file with following two lines:
-```
-set PATH=%PATH%;"C:\Python27"
-atom
-```
-4. Save file as `Use Atom with Python 2x.bat` on your desktop
-5. Double click the Batch file based on the Python version you want to start
+## Set user-defined path to a Python version
+1. Open the `Run dialog` with `Win+R`
+2. Enter `rundll32 sysdm.cpl,EditEnvironmentVariables` followed by `Enter`
+3. In the first table, double click the Variable `Path`
+4. In the new dialog, click in the first empty row and type in `C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3` (for Python 3.x) or `C:\Python27` (for Python 2.7) followed by Enter
+5. Click Ok twice to close all dialogs
 
+## Atom.io
 ### Required Plugins
 1. Go to `File`/`Settings` in the Menu bar (if not displayed, you can display it by pressing the `ALT` key)
 2. On the `Settings tab` change to `Install` (vertical tab) and search for `Script`
@@ -52,6 +43,14 @@ What is REPL? https://pythonprogramminglanguage.com/repl
 8. A new pane opens, press `Enter` if you don't see an input cursor
 9. Type in `python` followed by another `Enter`
 10. Voilà, your REPL is ready
+
+### Recommended Packages/Plugins
+- file-icons
+- highlight-selected
+- minimap
+- pigments
+- split-diff
+- atom-beautify
 
 ## Other Settings which might be useful
 - If Menu bar is not always show, press `ALT+V` and then choose `Toggle Menu Bar`
