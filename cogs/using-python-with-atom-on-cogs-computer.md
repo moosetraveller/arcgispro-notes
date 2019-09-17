@@ -29,8 +29,6 @@ Note: If you need to switch, change the `PATH` variable's value pointing to the 
 - pigments
 - split-diff
 - atom-beautify
-- linter-eslint
-- linter-csslint
 
 ## Other Settings which might be useful
 - If Menu bar is not always show, press `ALT+V` and then choose `Toggle Menu Bar`
