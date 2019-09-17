@@ -1,3 +1,9 @@
+#!C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python.exe
+# -*- coding: utf-8 -*-
+
+# Reorganizes and reprojects CanVec data.
+# Script written by Thomas Zuberbuehler
+
 import os
 import arcpy
 import logging
