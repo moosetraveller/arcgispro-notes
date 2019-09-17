@@ -1,4 +1,4 @@
-#!c:\program files\arcgis\pro\bin\python\envs\arcgispro-py3\python.exe
+#!c:/program files/arcgis/pro/bin/python/envs/arcgispro-py3/python.exe
 # -*- coding: utf-8 -*-
 
 # Reorganizes and reprojects CanVec data.
