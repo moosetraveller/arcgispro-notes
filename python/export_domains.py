@@ -1,6 +1,9 @@
 #!c:/program files/arcgis/pro/bin/python/envs/arcgispro-py3/python.exe
 # -*- coding: utf-8 -*-
 
+# Exports given domains from a CanVec geodatabase to DBF files and
+# updates the description field (removes everything except the
+# English description)
 #
 # Author: Thomas Zuberbuehler (thomas.zuberbuehler@gmail.com)
 
