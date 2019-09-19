@@ -14,10 +14,10 @@ import os
 import arcpy
 import logging
 
-source_geodatabase = r"F:\CART3032\data\canvec\vancouver\canvec_190916_116785.gdb"
+source_geodatabase = r"G:\CART3032\data\canvec\vancouver\canvec_190916_116785.gdb"
 
 target_geodatabase_name = r"Vancouver.gdb"
-target_geodatabase_location = r"F:\CART3032\projects\Vancouver"
+target_geodatabase_location = r"G:\CART3032\projects\Vancouver"
 target_geodatabase = os.path.join(target_geodatabase_location, target_geodatabase_name)
 
 target_feature_dataset = "canvec"
@@ -25,7 +25,7 @@ target_feature_dataset = "canvec"
 coordinate_system = arcpy.SpatialReference("NAD 1983 UTM Zone 10N")
 
 def init_logging():
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s  %(levelname)s %(message)s')
 
 def set_environment():
     arcpy.env.workspace = source_geodatabase
