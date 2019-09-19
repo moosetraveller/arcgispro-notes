@@ -2,6 +2,11 @@
 # -*- coding: utf-8 -*-
 
 # Reorganizes and reprojects CanVec data.
+# - Creates a new Geodatabase (overwrites an existing one)
+# - Creates a dataset 'canvec'
+# - Projects feature classes with more than 1 feature and saves them in the new geodatabase
+# - Renames feature classes (_0 -> _pt, _1 -> _ln, _2 -> _py)
+#
 # Author: Thomas Zuberbuehler (thomas.zuberbuehler@gmail.com)
 
 import os
