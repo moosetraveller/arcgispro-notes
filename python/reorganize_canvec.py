@@ -6,6 +6,7 @@
 # - Creates a dataset 'canvec'
 # - Projects feature classes with at least 1 feature and saves them in the new geodatabase
 # - Renames feature classes (_0 -> _pt, _1 -> _ln, _2 -> _py)
+# - Updates alias for each feature class (removes underscores and use title case)
 #
 # Author: Thomas Zuberbuehler (thomas.zuberbuehler@gmail.com)
 
