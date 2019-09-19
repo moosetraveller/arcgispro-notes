@@ -1,3 +1,10 @@
+#!c:/program files/arcgis/pro/bin/python/envs/arcgispro-py3/python.exe
+# -*- coding: utf-8 -*-
+
+# Just a training script to get familiar with the ABC package.
+#
+# Author: Thomas Zuberbuehler (thomas.zuberbuehler@gmail.com)
+
 import os
 from abc import ABC
 
