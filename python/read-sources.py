@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Read sources in current ArcGIS Pro project added to a map.
+# - sorts sources by path
 #
 # Author: Thomas Zuberbuehler (thomas.zuberbuehler@gmail.com)
 
