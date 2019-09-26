@@ -7,4 +7,3 @@
 - Improvement for Back Button (if I click that Button, I want to go back to the previous Pane)
   - for example, if I open an own model from Catalog/Project and run it, I would expect to go back to Catalog
 - Renaming Model Builder tools/inputs/results should allow case-sensitive changes
-- Ability to format labels in Model Builder
