@@ -1,5 +1,6 @@
 # Ideas for ArcGIS Pro for Improvements
-- Hotkeys [will be implemented in 2.5]
+- Hotkey to Run a Geoprocessing Tool [will be implemented in 2.5]
+  - https://community.esri.com/thread/237173-shortcut-to-run-a-geoprocessing-tool
 - Documentation for Advanced Users
   - no need to dig through step-by-step instructions
 - Being able to use minimum (and maximum) zoom levels in a Map Pane
