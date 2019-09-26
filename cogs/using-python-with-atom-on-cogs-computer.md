@@ -36,7 +36,7 @@ Note: If you need to switch, change the `PATH` variable's value pointing to the 
 ## Language Shell (REPL)
 What is REPL? https://pythonprogramminglanguage.com/repl
 
-*Note:* To use REPL, it might be useful to use IDLE since it provides auto-complete.
+**Note:** To use REPL, it might be useful to use IDLE since it provides auto-complete.
 
 ### Command Prompt as an alternative to IDLE
 1. Open the `Run dialog` with `Win+R`
