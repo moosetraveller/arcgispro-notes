@@ -11,5 +11,5 @@ maps = aprx.listMaps()
 for map in maps:
   layers = map.listLayers()
   sorted_layers = sorted(layers, key=lambda layer: layer.dataSource)
-  for layer in layers:
+  for layer in sorted_layers:
     print (layer.dataSource)
