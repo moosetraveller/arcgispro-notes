@@ -8,3 +8,4 @@
 - Improvement for Back Button (if I click that Button, I want to go back to the previous Pane)
   - for example, if I open an own model from Catalog/Project and run it, I would expect to go back to Catalog
 - Renaming Model Builder tools/inputs/results should allow case-sensitive changes
+- Being able to use F5 (when selecting a file within a folder) to refresh current folder (in Catalog/Project)
