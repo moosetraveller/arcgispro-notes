@@ -3,7 +3,7 @@
 1. Open the `Run dialog` with `Win+R`
 2. Enter `rundll32 sysdm.cpl,EditEnvironmentVariables` followed by `Enter`
 3. In the first table, double click the Variable `PATH`
-4. In the new dialog, click in the first empty row and type in `C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3` (for Python 3.x) or `C:\Python27` (for Python 2.7) followed by Enter
+4. In the new dialog, click in the first empty row and type in `C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3` for Python 3.x (or `C:\Python27` for Python 2.7 followed by Enter)
 5. Click Ok twice to close all dialogs
 
 Note: If you need to switch, change the `PATH` variable's value pointing to the other Python version. However, you need to restart Atom.
