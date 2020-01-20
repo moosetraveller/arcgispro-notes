@@ -8,6 +8,8 @@
 
 Note: If you need to switch, change the `PATH` variable's value pointing to the other Python version. However, you need to restart Atom.
 
+**Note: in Fall 2019, we had to clone our ArcGIS Pro Python environment, the path might be different (eg. `C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3-clone`).**
+
 Note: If there is another path set in the system Path (where we do not have privileges to make changes), then you might need to follow the instructions of one of the alternatives below.
 
 ### Alternative 1
