@@ -8,7 +8,9 @@
 
 Note: If you need to switch, change the `PATH` variable's value pointing to the other Python version. However, you need to restart Atom.
 
-## Alternative 1
+Note: If there is another path set in the system Path (where we do not have privileges to make changes), then you might need to follow the instructions of one of the alternatives below.
+
+### Alternative 1
 1. Create a (batch) file on your desktop with the name `atom.bat`
 2. Add on first line: `SET %PATH%="C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3";%PATH%`
 3. Add on second line: `C:\Program Files\atom\app-1.43.0\atom.exe`
@@ -17,7 +19,7 @@ Note: If you need to switch, change the `PATH` variable's value pointing to the 
 
 Note: If you use this alternative, it is important that you do not close the console/terminal window, otherwise atom will be closed down as well (and you might have data loss)
 
-## Alternative 2
+### Alternative 2
 1. Open Atom
 2. Menu `File`, then `Settings` (or open Settings with `Ctrl+,`)
 3. Click on button `Open Config Folder`
@@ -28,6 +30,8 @@ Note: If you use this alternative, it is important that you do not close the con
 8. Re-open Atom
 
 Note: requires `script` package to be installed, but you need that anyway for Python development with Atom. How to install see below in Required Plugins.
+
+Note: if you upgrade the `script` package, you have to redo above steps.
 
 ## Required Plugins
 1. Go to `File`/`Settings` in the Menu bar (if not displayed, you can display it by pressing the `ALT` key)
