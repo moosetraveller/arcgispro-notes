@@ -14,21 +14,21 @@ Note: If there is another path set in the system Path (where we do not have priv
 
 Note: If you have QGIS's `bin` directory in your Path variable (e.g. in order to use GDAL), make sure it is added below (after) the Python installation path. Otherwise Python from QGIS will be found.
 
-### Alternative 1
+### Workaround 1
 1. Create a (batch) file on your desktop with the name `atom.bat`
-2. Add on first line: `SET %PATH%="C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3";%PATH%`
+2. Add on first line: `SET PATH="C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3";%PATH%`
 3. Add on second line: `C:\Program Files\atom\app-1.43.0\atom.exe`
 4. Save and close file
 5. Start Atom with this batch file instead with your start menu.
 
 Note: If you use this alternative, it is important that you do not close the console/terminal window, otherwise atom will be closed down as well (and you might have data loss)
 
-### Alternative 2
+### Workaround 2
 1. Open Atom
 2. Menu `File`, then `Settings` (or open Settings with `Ctrl+,`)
 3. Click on button `Open Config Folder`
 4. Navigate to `package\script\lib\grammars\python.coffee`
-5. On line 12: replace `python` with `C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python`
+5. On line 5 *and* 12: replace `python` with `"C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\python"`
 6. Save with `Ctrl+S`
 7. Close both (Atom) windows
 8. Re-open Atom
