@@ -1,16 +1,18 @@
-# Iterates over all feature classes within a geodatabase, splits feature classes by feature code (ignores
-# those without) and saves them in an output geodatabase. Later merges features classes based on 
-# the dictionary.
-
-# TODO cleanup code
+# Iterates over all feature classes within a geodatabase, splits feature classes
+# by feature code (ignores those without) and saves them in an output
+# geodatabase. Later merges features classes based on the dictionary.
 
 import sys, os, shutil
 import arcpy
 
-enable_create_output_geodatabase = True
-enable_merge_feature_classes = True
-
 split_fields = ["FEAT_CODE"]
+
+file_path = r"C:\_data\geonova\20200115\Digby"
+
+input_geodatabase = os.path.join(file_path, "digby.gdb")
+
+output_geodatabase_file_name = "output.gdb"
+output_geodatabase = os.path.join(file_path, output_geodatabase_file_name)
 
 merge_dict = {
     "Highway_Ln" : ["RRRDHWW1", "RRRDHWX1", "RRRDHWY1"],
@@ -18,7 +20,7 @@ merge_dict = {
     "Arterial_Road_Ln": ["RRRDATY1", "RRRDLAY1"],
     "Arterial_Road_Bridge_Ln": ["RRBRATY1", "RRBRLAY1"],
     "Collector_Road_Ln": ["RRRDCOY1", "RRRDLCY1"],
-    "Collector_Road_Bridge_Ln": ["RRRDCOY1"],
+    "Collector_Road_Bridge_Ln": ["RRBDCOY1"],
     "Local_Road_Ln": ["RRRDLOY1", "RRRDLOZ1"],
     "Local_Road_Bridge_Ln": ["RRBRLOY1", "RRBRLOZ1"],
     "Local_Road_Unpaved_Ln": ["RRRDLOY2", "RRRDLOZ2"],
@@ -42,14 +44,14 @@ merge_dict = {
     "Rapids_Py": ["WARA40"],
     "Dam_Py": ["WADM40"],
     "Lake_Py": ["WALK40"],
-    "River_Water_Py": ["WALK40"],
-    "River_Lake_Water_Py": ["WALK40"],
-    "Reservoir_Water_Area_Py": ["WALK40"],
-    "Canal_Water_Py": ["WALK40"],
-    "Swamp_Py": ["WALK40"],
-    "Coast_Water_Py": ["WALK40"],
-    "Breakwater_Py": ["WALK40"],
-    "Slipway_Py": ["WALK40"],
+    "River_Water_Py": ["WARV40"],
+    "River_Lake_Water_Py": ["WARVLK40"],
+    "Reservoir_Water_Area_Py": ["WARS40"],
+    "Canal_Water_Py": ["WACA40"],
+    "Swamp_Py": ["WASW40"],
+    "Coast_Water_Py": ["WACO40"],
+    "Breakwater_Py": ["WABW40"],
+    "Slipway_Py": ["WASP40"],
     "River_Ln": ["WARV50", "WARV55", "WARVSP50", "WARVSP55"],
     "Unterground_River_Ln": ["WARV56"],
     "Rapids_Ln": ["WARA50"],
@@ -67,15 +69,6 @@ merge_dict = {
     "Falls_Left_Ln": ["WAFAR0"]
 }
 
-file_path = r"C:\_data\geonova\20200115\Digby"
-
-input_geodatabase = r"{}\digby.gdb".format(file_path)
-
-output_geodatabase_file_name = "output.gdb"
-output_geodatabase = r"{}\{}".format(file_path, output_geodatabase_file_name)
-
-# arcpy.env.workspace = input_geodatabase
-
 def create_output_geodatabase():
     print("Delete existing output geodatabase...")
     shutil.rmtree(output_geodatabase, ignore_errors=True)
@@ -89,20 +82,19 @@ def create_output_geodatabase():
                 print("Split feature class {}...".format(feature_class))
                 arcpy.analysis.SplitByAttributes(feature_class_path, output_geodatabase, split_fields)
 
-    # for feature_class in arcpy.ListFeatureClasses():
-    #     if split_fields[0] in [field.name for field in arcpy.ListFields(feature_class)]:
-    #         print("Split feature class {}...".format(feature_class))
-    #         arcpy.analysis.SplitByAttributes(feature_class, output_geodatabase, split_fields)
-
 def merge_feature_classes():
     for name, feature_codes in merge_dict.items():
-        print("Merge {}...").format(feature_codes)
+        print("Merge {} to {}...").format(feature_codes, name)
         feature_classes = [os.path.join(output_geodatabase, feature_code) for feature_code in feature_codes]
         output_feature_class = os.path.join(output_geodatabase, name)
         arcpy.management.Merge(feature_classes, output_feature_class)
+        print("Remove merged feature classes {}...").format(feature_codes)
+        for feature_class in feature_classes:
+            arcpy.management.Delete(feature_class)
 
-if enable_create_output_geodatabase:
+def main():
     create_output_geodatabase()
-
-if enable_merge_feature_classes:
     merge_feature_classes()
+
+if __name__== "__main__":
+  main()
