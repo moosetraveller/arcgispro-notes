@@ -14,13 +14,15 @@ input_geodatabase = os.path.join(file_path, "digby.gdb")
 output_geodatabase_file_name = "output.gdb"
 output_geodatabase = os.path.join(file_path, output_geodatabase_file_name)
 
+# projection = arcpy.SpatialReference(2961)
+
 merge_dict = {
     "Highway_Ln" : ["RRRDHWW1", "RRRDHWX1", "RRRDHWY1"],
     "Highway_Bridge_Ln": ["RRBRHWY1", "RRBRHWX1"],
     "Arterial_Road_Ln": ["RRRDATY1", "RRRDLAY1"],
     "Arterial_Road_Bridge_Ln": ["RRBRATY1", "RRBRLAY1"],
     "Collector_Road_Ln": ["RRRDCOY1", "RRRDLCY1"],
-    "Collector_Road_Bridge_Ln": ["RRBDCOY1"],
+    "Collector_Road_Bridge_Ln": ["RRBRCOY1"],
     "Local_Road_Ln": ["RRRDLOY1", "RRRDLOZ1"],
     "Local_Road_Bridge_Ln": ["RRBRLOY1", "RRBRLOZ1"],
     "Local_Road_Unpaved_Ln": ["RRRDLOY2", "RRRDLOZ2"],
@@ -58,7 +60,7 @@ merge_dict = {
     "Dam_Ln": ["WADM50"],
     "Coastline_Right_Ln": ["WACO20", "WACORV20", "WACOIS10"],
     "Coastline_Indefinite_Right_Ln": ["WACO25", "WACOIS15"],
-    "Coastline_Lake_Left_Ln": ["WARV10", "WALKIS10"],
+    "Coastline_Lake_Left_Ln": ["WALKIS10"],
     "Coastline_Lake_Right_Ln": ["WALK20", "WARS20"],
     "Coastline_Lake_Indefinite_Right_Ln": ["WALK25"],
     "Coastline_River_Left_Ln": ["WARV10", "WARV15", "WACORVIS10"],
@@ -89,9 +91,9 @@ def merge_feature_classes():
         feature_classes = [os.path.join(output_geodatabase, feature_code) for feature_code in feature_codes]
         output_feature_class = os.path.join(output_geodatabase, name)
         arcpy.management.Merge(feature_classes, output_feature_class)
-        print("Remove merged feature classes {}...").format(feature_codes)
-        for feature_class in feature_classes:
-            arcpy.management.Delete(feature_class)
+        # print("Remove merged feature classes {}...").format(feature_codes)
+        # for feature_class in feature_classes:
+        #     arcpy.management.Delete(feature_class)
 
 def main():
     create_output_geodatabase()
