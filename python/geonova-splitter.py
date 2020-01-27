@@ -75,6 +75,7 @@ def create_output_geodatabase():
     print("Create output geodatabase...")
     arcpy.management.CreateFileGDB(file_path, output_geodatabase_file_name)
 
+def split_by_attribute():
     for path, _, feature_classes in arcpy.da.Walk(input_geodatabase, datatype="FeatureClass"):
         for feature_class in feature_classes:
             feature_class_path = os.path.join(path, feature_class)
@@ -94,6 +95,7 @@ def merge_feature_classes():
 
 def main():
     create_output_geodatabase()
+    split_by_attribute()
     merge_feature_classes()
 
 if __name__== "__main__":
