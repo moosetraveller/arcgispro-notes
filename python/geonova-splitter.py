@@ -1,3 +1,5 @@
+# Script prepares GeoNova dataset for an export to Adobe Illustrator with ArcMap.
+#
 # Iterates over all feature classes within a geodatabase, splits feature classes
 # by feature code (ignores those without) and saves them in an output
 # geodatabase. Later merges features classes based on the dictionary.
