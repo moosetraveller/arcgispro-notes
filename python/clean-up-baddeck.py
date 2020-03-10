@@ -5,15 +5,27 @@ import os
 import arcpy
 import logging
 
-geodatabase = r"C:\Nautical\Project\Baddeck.gdb"
+# root directory
+root_directory = r"G:\Nautical"
+# path to projection file
+projection_file = os.path.join(root_directory, "Scripts", "BaddeckMercator.prj")
+# path to geodatabase
+geodatabase = os.path.join(root_directory, "Project", "Baddeck.gdb")
+# source dataset
 dataset = os.path.join(geodatabase, "S101")
+# feature class and dataset postfix
+feature_class_postfix = "_ClipPrj"
+# study area
+bbox = os.path.join(geodatabase, "BboxMainMap")
+
+scratch_feature_class = os.path.join(geodatabase, "ScratchFeature")
 
 arcpy.env.workspace = dataset
 arcpy.env.overwriteOutput = True
 
-spatial_reference = arcpy.SpatialReference(r"C:\Nautical\Scripts\BaddeckMercator.prj")
+spatial_reference = arcpy.SpatialReference(projection_file)
 
-projected_dataset_name = "S101_Prj"
+projected_dataset_name = "S101" + feature_class_postfix
 projected_dataset = os.path.join(geodatabase, projected_dataset_name)
 
 
@@ -23,19 +35,34 @@ def init_logging():
 
 def clean_up():
     logging.info("Start clean-up...")
+    # delete existing dataset
+    arcpy.management.Delete(os.path.join(geodatabase, projected_dataset_name))
+    # create a new dataset using projection file
     arcpy.management.CreateFeatureDataset(geodatabase, projected_dataset_name, spatial_reference)
     logging.info("Feature dataset {} created.".format(projected_dataset))
 
-    for feature_class in arcpy.ListFeatureClasses():
+    feature_classes = arcpy.ListFeatureClasses()
+    feature_classes_count = len(feature_classes)
 
-        row_count = arcpy.management.GetCount(feature_class)
-        target_feature_class = os.path.join(projected_dataset, feature_class + "_Prj")
+    for index, feature_class in enumerate(feature_classes, 1):
 
-        if int(row_count[0]) > 0:
-            arcpy.management.Project(os.path.join(dataset, feature_class), target_feature_class, spatial_reference)
-            logging.info("Feature class {} projected and copied.".format(feature_class))
+        # count features within study area (bbox)
+        features, _, count = arcpy.management.SelectLayerByLocation(feature_class, "intersect", bbox)
+        target_feature_class = os.path.join(projected_dataset, feature_class + feature_class_postfix)
+
+        if int(count) > 0:
+            # clip features to study area, save as a temporary/scratch feature class
+            arcpy.analysis.Clip(features, bbox, scratch_feature_class)
+            # project clipped features
+            arcpy.management.Project(scratch_feature_class, target_feature_class, spatial_reference)
+            logging.info("{0:3d}/{1:3d} Feature class {2} projected and copied.".format(index, feature_classes_count, feature_class))
+
         else:
-            logging.info("Feature class {} ignored. No records found.".format(feature_class))
+            logging.info("{0:3d}/{1:3d} Feature class {2} ignored. No records found.".format(index, feature_classes_count, feature_class))
+
+    # delete temporary/scratch feature class
+    arcpy.management.Delete(scratch_feature_class)
+    logging.info("Scratch feature class deleted.")
 
     logging.info("Clean-up finished.")
 
