@@ -6,17 +6,21 @@ import arcpy
 import logging
 
 # root directory
-root_directory = r"V:\Nautical"
+root_directory = r"G:\Nautical"
 # path to projection file
 projection_file = os.path.join(root_directory, "Scripts", "BaddeckMercator.prj")
-# path to geodatabase
-geodatabase = os.path.join(root_directory, "Project", "Baddeck.gdb")
+# path to source geodatabase
+source_geodatabase = os.path.join(root_directory, "Project", "Baddeck.gdb")
 # source dataset
-dataset = os.path.join(geodatabase, "Canvec")
+dataset = os.path.join(source_geodatabase, "S101")
+# path to target geodatabase
+target_geodatabase = source_geodatabase
 # feature class and dataset postfix
 feature_class_postfix = "_ClipPrj"
+# projectec dataset name
+projected_dataset_name = "S101" + feature_class_postfix
 # study area
-bbox = os.path.join(geodatabase, "MapArea")
+bbox = os.path.join(geodatabase, "BboxMainMap")
 
 scratch_feature_class = os.path.join(geodatabase, "ScratchFeature")
 
@@ -25,8 +29,7 @@ arcpy.env.overwriteOutput = True
 
 spatial_reference = arcpy.SpatialReference(projection_file)
 
-projected_dataset_name = "Canvec" + feature_class_postfix
-projected_dataset = os.path.join(geodatabase, projected_dataset_name)
+projected_dataset = os.path.join(target_geodatabase, projected_dataset_name)
 
 
 def init_logging():
